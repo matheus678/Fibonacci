@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Fibonacci
 {
@@ -23,49 +23,47 @@ namespace Fibonacci
             0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 2584 4181 6765
             */
 
-           int n;
-            int n1 = 1;
-            int n2 = 0;
-            int final =0; 
+            int n;
+            int n1 = 0;
+            int n2 = 1;
+            int final = 0;
 
-            bool positivo; 
+            bool positivo;
 
             // número aprovado pelo sistema
 
             Console.WriteLine("Digite um número...");
 
-            positivo = Int32.TryParse (Console.ReadLine(), out n);
+            positivo = Int32.TryParse(Console.ReadLine(), out n);
 
             if (n < 2)
 
             {
 
-            Console.WriteLine("Número inválido.");
+                Console.WriteLine("Número inválido.");
 
-            Console.WriteLine("Aperte qualquer tecla.");
+                Console.WriteLine("Aperte qualquer tecla.");
 
-            Console.ReadKey();
+                Console.ReadKey();
 
-            Environment.Exit(-1);
+                Environment.Exit(-1);
 
-            // omando para fechar o programa
+                // omando para fechar o programa
 
             }
 
-            for (int contador = 0; contador < n; contador++) 
+            for (int contador = 0; contador < n; contador++)
 
             // pra simplificar, como o usuário digitará apenas um número irei usar o tipo de laço for
 
             {
+                Console.WriteLine(final);
 
-             final = n1 + n2;
+                final = n1 + n2;
+                
+                n2 = n1;
 
-
-             Console.WriteLine (final);
-
-             n2 = n1;
-
-             n1 = n2;
+                n1 = final;
 
             }
 
